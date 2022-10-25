@@ -20,7 +20,7 @@ export const putDb = async (content) => {
   //specify database
   const jateRead = jateDb.transaction('jate', 'readwrite');
   //object store 
-  const objectStore = jateRead.objectStore('jate');
+  const objStore = jateRead.objectStore('jate');
   //add all content stored in DB
   const req = objStore.put({id: id, value: value});
   //add content
@@ -36,7 +36,7 @@ export const getDb = async (value) => {
   //specify database
   const jateRead = jateDb.transaction('jate', 'readwrite');
   //object store 
-  const objectStore = jateRead.objectStore('jate');
+  const objStore = jateRead.objectStore('jate');
   //require all content stored in DB
   const req = objStore.getAll();
   //fetch content
