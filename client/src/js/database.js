@@ -16,11 +16,11 @@ const initdb = async () =>
 export const putDb = async (content) => {
   console.log('Update jate database content');
   //connect to database
-  const jateDatabase = await openDB('jate', 1);
+  const jateDb = await openDB('jate', 1);
   //specify database
   const jateRead = jateDb.transaction('jate', 'readwrite');
   //object store 
-  const objectStore = jateRead.objectStore('jate');
+  const objStore = jateRead.objectStore('jate');
   //add all content stored in DB
   const req = objStore.put({id: id, value: value});
   //add content
@@ -32,11 +32,11 @@ export const putDb = async (content) => {
 export const getDb = async (value) => {
   console.error('Get jate database content');
   //connect to database
-  const jateDatabase = await openDB('jate', 1);
+  const jateDb = await openDB('jate', 1);
   //specify database
   const jateRead = jateDb.transaction('jate', 'readwrite');
   //object store 
-  const objectStore = jateRead.objectStore('jate');
+  const objStore = jateRead.objectStore('jate');
   //require all content stored in DB
   const req = objStore.getAll();
   //fetch content
